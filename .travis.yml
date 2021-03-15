@@ -2,6 +2,8 @@ sudo: false
 language: java
 jdk:
   - openjdk8
+  - openjdk11
+  - openjdk14
 services:
   - mysql
   - postgresql
@@ -12,6 +14,10 @@ matrix:
   - jdk: openjdk8
     env: DB=mysql
   - jdk: openjdk8
+    env: DB=pgsql
+  - jdk: openjdk11
+    env: DB=pgsql
+  - jdk: openjdk14
     env: DB=pgsql
 
 script: mvn test -Dspring.profiles.active=$DB
