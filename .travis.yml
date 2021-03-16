@@ -15,10 +15,6 @@ matrix:
     env: DB=mysql
   - jdk: openjdk8
     env: DB=pgsql
-  - jdk: openjdk11
-    env: DB=pgsql
-  - jdk: openjdk14
-    env: DB=pgsql
 
 script: mvn test -Dspring.profiles.active=$DB
 
